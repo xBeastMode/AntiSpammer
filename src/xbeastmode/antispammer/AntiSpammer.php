@@ -44,11 +44,6 @@ class AntiSpammer extends PluginBase implements Listener
         }
         return $f;
     }
-
-    /**
-     * @return bool
-     * @internal param $message
-     */
     public function checkMessage()
     {
         if($this->isSpamming())
@@ -61,6 +56,9 @@ class AntiSpammer extends PluginBase implements Listener
             $this->m = time();
         }
     }
+    /**
+     *@return bool 
+     */
     public function isSpamming()
     {
         return (time() - $this->m < 3);
