@@ -34,6 +34,7 @@ class AntiSpammer extends PluginBase implements Listener
             $int = 1;
             foreach($str as $par)
             {
+                $p["%nl%"] = "\n";
                 $p["%$int%"] = $par;
                 $int++;
             }
@@ -55,12 +56,12 @@ class AntiSpammer extends PluginBase implements Listener
                 $this->spams[$player->getName()] = 0;
             }
             $this->spams[$player->getName()]++;
-            $player->sendMessage($this->par("%1%Please do not spam the chat. Warnings: " . $this->spams[$player->getName()] . ".\n%2%* If your warnings are 3 you will be kicked.", color::RED, color::AQUA));
+            $player->sendMessage($this->par("%1%Please do not spam the chat. Warnings: " . $this->spams[$player->getName()] . ".%nl%%2%* If your warnings are 3 you will be kicked.", color::RED, color::AQUA));
             $this->ev->setCancelled();
             if($this->spams[$player->getName()] === 3)
             {
                 $this->getServer()->broadcastMessage($this->par("%1%[Server] kicked %2%. Reason: spamming the chat.", color::RED, $player->getName()));
-                $player->kick($this->par("%1%\nSpamming the chat.", color::RED));
+                $player->kick($this->par("%1%%nl%Spamming the chat.", color::RED));
                 unset($this->spams[$player->getName()]);
             }
         }
