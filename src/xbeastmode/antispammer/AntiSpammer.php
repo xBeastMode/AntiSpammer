@@ -16,11 +16,10 @@ namespace antispam;
             if(isset($this->players[spl_object_hash($p)]) and (time() - $this->players[$p->getName()] <= intval($this->getConfig()->get("time")))){
                 $p->sendMessage(str_replace("%player%", $p->getName(),
                     $this->getConfig()->get("message")));
-                return true;
+                $e->setCancelled();
             }
             else{
                 $this->players[spl_object_hash($p)] = time();
-                return false;
             }
         }
     }
