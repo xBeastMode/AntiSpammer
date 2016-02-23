@@ -5,7 +5,7 @@ namespace antispam;
     use pocketmine\event\player\PlayerChatEvent;
     use pocketmine\utils\TextFormat;
     use pocketmine\event\Listener;
-    class AntiSpam extends PluginBase implements Listener{
+    class AntiSpammer extends PluginBase implements Listener{
         private $players = [];
         public function onEnable(){
             $this->getServer()->getPluginManager()->registerEvents($this, $this);
