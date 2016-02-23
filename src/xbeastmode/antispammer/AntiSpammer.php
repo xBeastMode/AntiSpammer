@@ -1,5 +1,5 @@
 <?php
-namespace antispam;
+namespace xbeastmode\antispammer;
     use pocketmine\Player;
     use pocketmine\plugin\PluginBase;
     use pocketmine\event\player\PlayerChatEvent;
