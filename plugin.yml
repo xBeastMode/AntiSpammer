@@ -1,5 +1,5 @@
 main: antispam\AntiSpam
-api: 1.13.0
+api: 2.0.0
 load: STARTUP
 name: AntiSpam
 description: "antispam plugin"
