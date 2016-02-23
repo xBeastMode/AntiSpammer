@@ -1,4 +1,4 @@
-main: xbeastmode\antispammer\AntiSpam
+main: xbeastmode\antispammer\AntiSpammer
 api: 2.0.0
 load: STARTUP
 name: AntiSpam
