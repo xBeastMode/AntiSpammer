@@ -13,7 +13,7 @@ namespace xbeastmode\antispammer;
         }
         public function onChat(PlayerChatEvent $e){
             if($e->getPlayer()->hasPermission("spam.bypass")) return;
-            if(isset($this->players[spl_object_hash($p)]) and (time() - $this->players[$p->getName()] <= intval($this->getConfig()->get("time")))){
+            if(isset($this->players[spl_object_hash($e->getPlayer())]) and (time() - $this->players[spl_object_hash($e->getPlayer())] <= intval($this->getConfig()->get("time")))){
                 $p->sendMessage(str_replace("%player%", $p->getName(),
                     $this->getConfig()->get("message")));
                 $e->setCancelled();
