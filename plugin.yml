@@ -1,5 +1,5 @@
 main: xbeastmode\antispammer\AntiSpammer
-api: 2.0.0
+api: [3.0.0-ALPHA11]
 load: STARTUP
 name: AntiSpam
 description: "antispam plugin"
